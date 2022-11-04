@@ -21,7 +21,7 @@ Run the command below on the repository's root folder.
 
 The project will be accessible at the address (Basic path): http://localhost:8080
 
-### Run automated tests (unit test and integration test)
+### Run automated tests (unit test)
 Run the command below on the repository's root folder.
 
     $ mvn test
