@@ -5,6 +5,8 @@ import org.atostest.services.dto.ProfileDTO;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.Objects.isNull;
+
 public class CacheUtils {
 
     private static ApplicationMap<String, ProfileDTO> profiles = new ApplicationMap<>();
@@ -23,7 +25,7 @@ public class CacheUtils {
     }
 
     public static void addDocument(String username, String documentName) {
-        if (documents.isEmpty()) {
+        if (documents.isEmpty() || isNull(documents.get(username))) {
             List<String> list = new ArrayList<>();
             list.add(documentName);
             documents.put(username, list);
