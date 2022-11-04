@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "a7aede87-2884-4fb0-a993-1ff00317ff7b",
+		"name": "Atos Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Profile",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"angelina_lawrence\",\r\n    \"name\": \"Angelina Lawrence\",\r\n    \"age\": 18,\r\n    \"email\": \"angelaw@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/profiles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Document",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "angelina_lawrence",
+						"type": "default"
+					},
+					{
+						"key": "document-name",
+						"value": "document_file_name.txt",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/mateu/Desktop/document_file_name.txt"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/documents/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"documents",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Document",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "angelina_lawrence",
+						"type": "default"
+					},
+					{
+						"key": "document-name",
+						"value": "document_file_name.txt",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/documents/retrieve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"documents",
+						"retrieve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Document",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "username",
+						"value": "angelina_lawrence",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/documents/delete/document_file_name.txt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"documents",
+						"delete",
+						"document_file_name.txt"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
