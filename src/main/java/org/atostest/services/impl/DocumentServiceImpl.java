@@ -91,7 +91,7 @@ public class DocumentServiceImpl implements DocumentService {
         ProfileDTO profile = CacheUtils.getProfile(username);
 
         if (isNull(profile)) {
-            throw new RuntimeException("User not registered.");
+            throw new RuntimeException("Profile not registered.");
         }
         return profile;
     }
